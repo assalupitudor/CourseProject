@@ -5,6 +5,14 @@ import re
 from spacy.lang.en import English
 from spacy.training.example import Example
 
+'''
+Run by typing "python keyword_extraction.py"
+Enter the number of iterations
+Model Name should ALWAYS be 'ner'; Added modifiable model name so future updates can use other models
+Enter sample sentence, gives keyword and keywork type
+'''
+
+
 file_path = 'data.txt'
 file = open(file_path, 'r', encoding='cp1252')
 doc = file.read()
