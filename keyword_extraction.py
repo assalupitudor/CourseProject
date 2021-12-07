@@ -14,7 +14,6 @@ word_dict = labels.set_index('entities')['labels'].to_dict() #initialize this wi
 
 #using eglish words create sentencizer to process the document/file
 process = English()
-#process.add_pipe(process.create_pipe('sentencizer')) 
 process.add_pipe('sentencizer') 
 doc = process(doc)
 sentences = [sentence.text.strip() for sentence in doc.sents]
@@ -37,7 +36,6 @@ for sentence in sentences:
             data_t = (sentence,d)
             data.append(data_t)
 
-print(data)
 
 def train(data, itr):
     #create a blank language class
@@ -55,7 +53,7 @@ def train(data, itr):
     with nlp.disable_pipes(*other_pipes):  # only train NER
         optimizer = nlp.begin_training()
         for itn in range(itr):
-            print("Starting iteration " + str(itn))
+            #print("Starting iteration " + str(itn))
             random.shuffle(data)
             losses = {}
             for text, annotations in data:
@@ -68,7 +66,7 @@ def train(data, itr):
                     drop=0.2,  # dropout - make it harder to memorise data
                     sgd=optimizer,  # callable to update weights
                     losses=losses)
-            print(losses)
+            #print(losses)
     return nlp
 
 
