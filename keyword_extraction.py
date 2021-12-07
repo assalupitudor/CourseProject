@@ -3,19 +3,21 @@ import pandas as pd
 import random
 import re
 from spacy.lang.en import English
+from spacy.training.example import Example
 
-
-file_path = 'some_path.txt'
-file = open(file_path, 'r')
+file_path = 'data.txt'
+file = open(file_path, 'r', encoding='cp1252')
 doc = file.read()
-
-word_dict = {} #initialize this with labels
+# read the label data
+labels = pd.read_csv('labels.csv')
+word_dict = labels.set_index('entities')['labels'].to_dict() #initialize this with labels
 
 #using eglish words create sentencizer to process the document/file
 process = English()
-process.add_pipe(process.create_pipe('sentencizer')) 
+#process.add_pipe(process.create_pipe('sentencizer')) 
+process.add_pipe('sentencizer') 
 doc = process(doc)
-sentences = [sentence.string.strip() for sentence in doc.sents]
+sentences = [sentence.text.strip() for sentence in doc.sents]
 
 data = []
 #corpus builder
@@ -35,9 +37,52 @@ for sentence in sentences:
             data_t = (sentence,d)
             data.append(data_t)
 
-#TRAIN_DATA = outer_list
 print(data)
 
-def train():
+def train(data, itr):
     #create a blank language class
     nlp = spacy.blank('en')
+    # name enyry recognition 
+    if 'ner' not in nlp.pipe_names:
+        ner = nlp.create_pipe('ner')
+        nlp.add_pipe('ner', last=True)
+    
+    for _, annotations in data:
+        for ent in annotations.get('entities'):
+            ner.add_label(ent[2])
+    
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
+    with nlp.disable_pipes(*other_pipes):  # only train NER
+        optimizer = nlp.begin_training()
+        for itn in range(itr):
+            print("Starting iteration " + str(itn))
+            random.shuffle(data)
+            losses = {}
+            for text, annotations in data:
+                
+                doc = nlp.make_doc(text)
+                
+                expl = Example.from_dict(doc, annotations)
+                nlp.update(
+                    [expl],  # batch of Example objects
+                    drop=0.2,  # dropout - make it harder to memorise data
+                    sgd=optimizer,  # callable to update weights
+                    losses=losses)
+            print(losses)
+    return nlp
+
+
+#Get number of iterations as input
+iterations_input = int(input("Enter number of iterations: "))
+prdnlp = train(data, iterations_input)
+
+# Save our trained Model
+modelfile = input("Enter your Model Name: ")
+prdnlp.to_disk(modelfile)
+
+#Test your text
+test_text = input("Enter your testing text: ")
+doc = prdnlp(test_text)
+for ent in doc.ents:
+    print(ent.text, ent.start_char, ent.end_char, ent.label_)
+spacy.displacy.render(doc, style="ent", page="true")
