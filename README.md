@@ -5,8 +5,8 @@ Using the SpaCy library, I created a python script which can take data and label
 
 
 
-**Project Subtopic: Display Parse Tree using NLTK 
-Implemented by: Sagar Dalwadi (sagardd2) **
+# Project Subtopic: Display Parse Tree using NLTK 
+## Implemented by: Sagar Dalwadi (sagardd2)
 
 1) An overview of the function of the code (i.e., what it does and what it can be used for). 
 
