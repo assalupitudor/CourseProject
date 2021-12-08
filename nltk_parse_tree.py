@@ -1,4 +1,4 @@
-# Import required libraries corresponding to the functions implemented in your program
+#Import required libraries in your program
 
 import nltk
 #import ssl
@@ -9,12 +9,12 @@ import nltk
 
 from nltk import pos_tag, word_tokenize, RegexpParser
 
-# Provide your sentence that you would like to display parse tree for
+#Provide your sentence that you would like to display parse tree for
 
-text_sentence = "He has also worked on problems related to mobile system usability, mobile networking, and experimental mobile testbed design."
+text_sentence = "This is a testing sentence to display a parse tree as part of demo."
 
 
-# Find all parts of speech in above sentence
+#Find all parts of speech in above sentence
 tagged = pos_tag(word_tokenize(text_sentence))
 
 
@@ -28,12 +28,12 @@ chunker = RegexpParser("""
 					""")
 
 
-# Print all parts of speech in above sentence
+#Print all parts of speech in above sentence
 output = chunker.parse(tagged)
 print("After Extracting\n", output)
 
 
-# Display the parts tagged above as a parse tree
+#Display the parts tagged above as a parse tree
 output.draw()
 
 
