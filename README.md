@@ -1,3 +1,4 @@
 # CourseProject
 
-Please fork this repository and paste the github link of your fork on Microsoft CMT. Detailed instructions are on Coursera under Week 1: Course Project Overview/Week 9 Activities.
+## Domain-specific Keyword extraction (Vedant-vedantj2)
+Using the SpaCy library, I created a python script which can take data and labels as text and run keyword extraction using the label and data provided for any user input sentence. 
