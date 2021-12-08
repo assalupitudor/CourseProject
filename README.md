@@ -82,7 +82,7 @@ Windows :
 •	Below are the steps in order to run the program:
 
    1.	First, provide an input sentence for which you would like to display a parse tree. Open a program in python editor and update/provide your sentence in the variable text_sentence.
-   2.	Go to terminal and execute the command python nltk_parse_tree.py
+   2.	Go to terminal and execute the command python3 nltk_parse_tree.py
    3.	Once the program is executed successfully it would open a new nltk window and display the parse tree for the sentence provided as an input.
 
 
