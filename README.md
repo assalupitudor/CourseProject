@@ -133,7 +133,7 @@ Implementing this function in MeTA will enhance the library and allow users to e
 
 *sample_output = extract_keywords (‘This program will extract keywords from the input document and print all the nouns, adjectives and verbs.’)*
 
-	The output will look like this:
+The output will look like this:
 ['program', 'will', 'extract', 'keywords', 'input', 'document', 'print', 'all', 'nouns', 'adjectives', 'verbs']
 
 •	There is also an option for the user to enter text of their choice which will then be served as an input for the keyword function to extract the words.
