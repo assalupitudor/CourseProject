@@ -1,17 +1,22 @@
-# Import required libraries
+# Import required libraries corresponding to the functions implemented in your program
 
 import nltk
 #import ssl
 
+# NLTK provides set of default datasets that can be imported to your program depending on the need
 #nltk.download('punkt')
 #nltk.download('averaged_perceptron_tagger')
+
 from nltk import pos_tag, word_tokenize, RegexpParser
 
-# Example text
-sample_text = "The quick brown fox jumps over the lazy dog. This is testing for final course project."
+# Provide your sentence that you would like to display parse tree for
+
+text_sentence = "He has also worked on problems related to mobile system usability, mobile networking, and experimental mobile testbed design."
+
 
 # Find all parts of speech in above sentence
-tagged = pos_tag(word_tokenize(sample_text))
+tagged = pos_tag(word_tokenize(text_sentence))
+
 
 #Extract all parts of speech from any text
 chunker = RegexpParser("""
@@ -22,9 +27,13 @@ chunker = RegexpParser("""
 					VP: {<V> <NP|PP>*}	 #To extract Verb Phrases
 					""")
 
+
 # Print all parts of speech in above sentence
 output = chunker.parse(tagged)
 print("After Extracting\n", output)
+
+
+# Display the parts tagged above as a parse tree
 output.draw()
 
 
