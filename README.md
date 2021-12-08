@@ -93,13 +93,13 @@ Our project proposal included 2 different subtopics for system extension to impl
 •	To distribute the work among the team members, we have divided based on the subtopics of the project.
 •	I have contributed towards the subtopic of displaying a parse tree using NLTK and end to end implementation of python program corresponding to this subtopic.
 
-#Keyword Extraction: Implemented by Sindhu Kopparam(sgk6)
+# Keyword Extraction: Implemented by Sindhu Kopparam(sgk6)
 
 The main purpose of a keyword extraction function is to help us in identifying the important keywords. Extracting specific keywords from a chunk of text will make it easier for the user to decide whether they want to read that article, social media comment, reviews, etc. Analyzing the unstructured text and choosing what to select is made easier by keyword extraction. For this project, we are implementing a function that takes a chunk of text as an input and extracts the specified POS tags (Noun, Verb, Adjective, etc.) as an output. 
 
 Implementing this function in MeTA will enhance the library and allow users to extract keywords effectively. Let’s look at the set up and the implementation of this function using SpaCy library.
 
-##Setup:
+## Setup:
 
 1.	Install the spaCy module via the pip install.
 *pip install -U spacy*
@@ -108,7 +108,7 @@ Implementing this function in MeTA will enhance the library and allow users to e
 3.	Run the following command to validate if spaCy is working properly.
 *python -m spacy validate*
 
-##Implementation:
+## Implementation:
 
 •	We will firstly import the libraries needed to implement this function. One library essential for this implementation would be spaCy as we are using its language model for text extraction.Apart from spaCy another library needed would be punctuation that contains the most commonly used punctuation.
 *import spacy*
