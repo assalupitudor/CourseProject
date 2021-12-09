@@ -6,10 +6,13 @@ Using the SpaCy library, I created a python script which can take data and label
 
 
 # Project Subtopic: Display Parse Tree using NLTK 
-## Implemented by: Sagar Dalwadi (sagardd2)
+## Implemented by: Sagar Dalwadi (sagardd2) 
+### Github Link: https://github.com/assalupitudor/CourseProject.git
 ### Program code file: nltk_parse_tree.py
 ### Program Input data: ParseTree_InputData
 ### Program Output: Screenshots named – nltk_pt_ss1 to nltk_pt_ss4
+### Project Presentation Demo link (only parse tree): https://drive.google.com/file/d/1aq4-yEF0332KZ0w24pvII4G4_aXx_1k-/view?usp=sharing
+
 ### You can also find the documentation in a word format in this Git repository named as NLTK_Parse Tree_Project Documentation.docx
 
 
