@@ -1,7 +1,12 @@
 # CourseProject
 
 ## Domain-specific Keyword extraction (Vedant-vedantj2)
-Using the SpaCy library, I created a python script which can take data and labels as text and run keyword extraction using the label and data provided for any user input sentence. 
+Using the SpaCy library, I created a python script(keyword_extraction.py) which can take data and labels as text and run keyword extraction using the label and data provided for any user input sentence. Libraries needed: spacy, pandas. pip install spacy/pandas. random library comes with python. 
+### Run the file
+Run by typing "python keyword_extraction.py" in the terminal after going into the folder where file exists
+Enter the number of iterations
+Model Name should ALWAYS be 'ner'; Added modifiable model name so future updates can use other models
+Enter sample sentence, gives keyword and keywork type
 
 
 
