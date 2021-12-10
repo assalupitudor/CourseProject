@@ -151,3 +151,9 @@ The output will look like this:
 ['program', 'will', 'extract', 'keywords', 'input', 'document', 'print', 'all', 'nouns', 'adjectives', 'verbs']
 
 •	There is also an option for the user to enter text of their choice which will then be served as an input for the keyword function to extract the words.
+
+
+## Video links
+Keyword extraction: https://drive.google.com/drive/folders/1vSagvvXWJL3i5kFLYyUla8Xal2D64Xhc?usp=sharing
+
+Parse Tree: 
